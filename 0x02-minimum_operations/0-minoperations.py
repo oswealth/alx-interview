@@ -3,15 +3,17 @@
 Module for calculating minimum operations to achieve 'n' characters.
 """
 
+
 def minOperations(n):
     """
-    Calculate the minimum number of operations to get exactly 'n' 'H' characters in the file.
+    Calculate the minimum number of operations to get exactly
+    'n' 'H' characters in the file.
     :param n: int
     :return: int
     """
     if n <= 1:
         return 0
-    
+
     operations = 0
     factor = 2
 
