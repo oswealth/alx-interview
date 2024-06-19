@@ -5,6 +5,7 @@ computes metrics.
 """
 import sys
 
+
 def display_metrics(total_size, status_code):
     """
     Function that prints the metrics.
@@ -13,6 +14,7 @@ def display_metrics(total_size, status_code):
     for key, value in sorted(status_code.items()):
         if value != 0:
             print('{}: {}'.format(key, value))
+
 
 if __name__ == '__main__':
     total_size = 0
