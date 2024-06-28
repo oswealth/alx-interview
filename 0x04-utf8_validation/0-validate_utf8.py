@@ -3,7 +3,7 @@
 def validUTF8(data):
     """
     Determines if a given data set represents a valid UTF-8 encoding.
-    
+
     :param data: List of integers
     :return: Boolean indicating whether the data is a valid UTF-8 encoding
     """
@@ -29,7 +29,7 @@ def validUTF8(data):
             if n_bytes == 1 or n_bytes > 4:
                 return False
         else:
-            # For bytes following the leading byte, check if they start with '10'
+            # For bytes following the leading byte, check if start with '10'
             if not (num & mask1 and not (num & mask2)):
                 return False
 
