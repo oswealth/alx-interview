@@ -20,7 +20,7 @@ request.get(API, async (error, response, body) => {
 });
 
 /** Calls the API to get the character info */
-function getCharacterName(character) {
+function getCharacterName (character) {
   return new Promise((resolve, reject) => {
     request.get(character, (error, response, body) => {
       if (error || response.statusCode !== 200) {
