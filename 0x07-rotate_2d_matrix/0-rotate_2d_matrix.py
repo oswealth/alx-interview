@@ -1,31 +1,26 @@
 #!/usr/bin/python3
 """
-Rotate a 2D matrix by 90 degrees (clockwise).
+Rotate an n x n 2D matrix 90 degrees clockwise in-place.
 """
 
 
 def rotate_2d_matrix(matrix):
     """
-        Rotate a 2D matrix by 90 degrees (clockwise).
-        """
+    Rotate the given n x n 2D matrix by 90 degrees clockwise in-place.
+
+    Args:
+    matrix (List[List[int]]): The matrix to be rotated.
+
+    Returns:
+    None: The function modifies the matrix in-place.
+    """
     n = len(matrix)
-    for layer in range(n // 2):
-        first = layer
-        last = n - 1 - layer
-        for i in range(first, last):
-            offset = i - first
-            top = matrix[first][i]
 
-            # left -> top
-            matrix[first][i] = matrix[last - offset][first]
+    # Step 1: Transpose the matrix
+    for i in range(n):
+        for j in range(i, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
-            # bottom -> left
-            matrix[last - offset][first] = matrix[last][last - offset]
-
-            # right -> bottom
-            matrix[last][last - offset] = matrix[i][last]
-
-            # top -> right
-            matrix[i][last] = top
-
-    return matrix
+    # Step 2: Reverse each row
+    for i in range(n):
+        matrix[i].reverse()
