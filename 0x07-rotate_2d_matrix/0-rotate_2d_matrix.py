@@ -13,7 +13,7 @@ def rotate_2d_matrix(matrix):
         first = layer
         last = n - 1 - layer
         for i in range(first, last):
-            offset = i - firs
+            offset = i - first
             top = matrix[first][i]
 
             # left -> top
